@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS pizzas;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS star_rating;
