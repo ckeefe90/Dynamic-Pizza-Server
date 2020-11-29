@@ -38,7 +38,7 @@ Users can delete the pizzas.
 
 ## Live App
 
-https://dynamic-pizza-client.vercel.app/
+https://dynamic-pizza-generator.vercel.app/
 
 ## Client Repository
 
