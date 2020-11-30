@@ -10,6 +10,5 @@ const db = knex({
 app.set('db', db);
 
 app.listen(config.PORT, () => {
-    console.log(JSON.stringify(config))
     console.log(`Server listening at http://localhost:${config.PORT}`);
 });
