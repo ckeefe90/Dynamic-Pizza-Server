@@ -18,4 +18,4 @@ function makeUserArray() {
     ];
 }
 
-module.exports = { makeUserArray }
+module.exports = { makeUserArray };

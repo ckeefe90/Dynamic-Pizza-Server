@@ -1,9 +1,9 @@
-const express = require('express')
-const UserService = require('./user-service')
-const jwt = require('jsonwebtoken')
+const express = require('express');
+const UserService = require('./user-service');
+const jwt = require('jsonwebtoken');
 
-const userRouter = express.Router()
-const jsonParser = express.json()
+const userRouter = express.Router();
+const jsonParser = express.json();
 
 function createUserJwt(user) {
     return jwt.sign({ ...user }, process.env.JWT_SECRET, { expiresIn: "7d" });
@@ -52,4 +52,4 @@ userRouter
             })
     })
 
-module.exports = userRouter
+module.exports = userRouter;

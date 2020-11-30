@@ -5,16 +5,16 @@ const UserService = {
             .into('users')
             .returning('*')
             .then(rows => {
-                const { id } = rows[0]
-                return { id }
-            })
+                const { id } = rows[0];
+                return { id };
+            });
     },
     validateCredentials(knex, email, password) {
         return knex('users')
             .where({ email, password })
             .select('id')
-            .first()
+            .first();
     }
-}
+};
 
-module.exports = UserService
+module.exports = UserService;

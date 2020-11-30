@@ -17,6 +17,13 @@ module.exports = {
         "supertest": true,
         "expect": true,
         "describe": true,
-        "it": true
+        "it": true,
+        "before": true,
+        "after": true,
+        "beforeEach": true,
+        "afterEach": true
+    },
+    "rules": {
+        semi: ["error", "always"]
     }
-}
+};
