@@ -15,7 +15,7 @@ Users can delete the pizzas.
 
 - Node.js
 - Express
-- Postgres
+- PostgreSQL
   
 ### Testing
 
