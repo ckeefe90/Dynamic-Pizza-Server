@@ -15,7 +15,7 @@ const serializePizza = pizza => ({
     sauce: xss(pizza.sauce),
     cheese: xss(pizza.cheese),
     meat: xss(pizza.meat),
-    topping: xss(pizza.topping),
+    veggie: xss(pizza.veggie),
     comments: xss(pizza.comments),
     rating: pizza.rating,
     user_id: pizza.user_id,
@@ -32,8 +32,8 @@ pizzaRouter
             .catch(next);
     })
     .post(jsonParser, (req, res, next) => {
-        const { name, crust, sauce, cheese, meat, topping, comments, user_id } = req.body;
-        const newPizza = { name, crust, sauce, cheese, meat, topping, user_id };
+        const { name, crust, sauce, cheese, meat, veggie, comments, user_id } = req.body;
+        const newPizza = { name, crust, sauce, cheese, meat, veggie, user_id };
 
         for (const [key, value] of Object.entries(newPizza)) {
             if (res.locals.user_id && key === 'user_id') continue;
@@ -47,7 +47,7 @@ pizzaRouter
         newPizza.sauce = sauce;
         newPizza.cheese = cheese;
         newPizza.meat = meat;
-        newPizza.topping = topping;
+        newPizza.veggie = veggie;
         newPizza.comments = comments || '';
         newPizza.user_id = res.locals.user_id || user_id;
 
@@ -95,8 +95,8 @@ pizzaRouter
             .catch(next);
     })
     .patch(jsonParser, (req, res, next) => {
-        const { name, crust, sauce, cheese, meat, topping, comments, rating } = req.body;
-        const pizzaToUpdate = { name, crust, sauce, cheese, meat, topping, comments, rating };
+        const { name, crust, sauce, cheese, meat, veggie, comments, rating } = req.body;
+        const pizzaToUpdate = { name, crust, sauce, cheese, meat, veggie, comments, rating };
 
         const numberOfValues = Object.values(pizzaToUpdate).filter(Boolean).length;
         if (numberOfValues === 0) {

@@ -164,7 +164,7 @@ describe('Pizza Endpoints', function () {
                         expect(res.body.sauce).to.eql(expectedPizza.sauce);
                         expect(res.body.cheese).to.eql(expectedPizza.cheese);
                         expect(res.body.meat).to.eql(expectedPizza.meat);
-                        expect(res.body.topping).to.eql(expectedPizza.topping);
+                        expect(res.body.veggie).to.eql(expectedPizza.veggie);
                         expect(res.body.comments).to.eql(expectedPizza.comments);
                     });
             });
@@ -191,7 +191,7 @@ describe('Pizza Endpoints', function () {
                     expect(res.body.sauce).to.eql(newPizza.sauce);
                     expect(res.body.cheese).to.eql(newPizza.cheese);
                     expect(res.body.meat).to.eql(newPizza.meat);
-                    expect(res.body.topping).to.eql(newPizza.topping);
+                    expect(res.body.veggie).to.eql(newPizza.veggie);
                     expect(res.body.comments).to.eql(newPizza.comments);
                     expect(res.body).to.have.property('id');
                     expect(res.headers.location).to.eql(`/api/pizzas/${res.body.id}`);
@@ -204,7 +204,7 @@ describe('Pizza Endpoints', function () {
                 });
         });
 
-        const requiredFields = ['name', 'crust', 'sauce', 'cheese', 'meat', 'topping'];
+        const requiredFields = ['name', 'crust', 'sauce', 'cheese', 'meat', 'veggie'];
 
         requiredFields.forEach(field => {
             const newPizza = { ...testPizzas[0] };
@@ -234,7 +234,7 @@ describe('Pizza Endpoints', function () {
                         expect(res.body.sauce).to.eql(newPizza.sauce);
                         expect(res.body.cheese).to.eql(newPizza.cheese);
                         expect(res.body.meat).to.eql(newPizza.meat);
-                        expect(res.body.topping).to.eql(newPizza.topping);
+                        expect(res.body.veggie).to.eql(newPizza.veggie);
                         expect(res.body.comments).to.eql(newPizza.comments);
                         expect(res.body.user_id).to.eql(user.id);
                         expect(res.body).to.have.property('id');
@@ -324,7 +324,7 @@ describe('Pizza Endpoints', function () {
                     .patch(`/api/pizzas/${idToUpdate}`)
                     .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
                     .send({ irrelevantField: 'foo' })
-                    .expect(400, { error: { message: `Request body must contain at least one of name, crust, sauce, cheese, meat, topping, comments, rating` } });
+                    .expect(400, { error: { message: `Request body must contain at least one of name, crust, sauce, cheese, meat, veggie, comments, rating` } });
             });
 
             it(`responds with 400 and an error message when the 'rating' is invalid`, () => {

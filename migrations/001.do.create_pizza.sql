@@ -14,7 +14,7 @@ CREATE TABLE pizzas (
     sauce TEXT NOT NULL,
     cheese TEXT NOT NULL,
     meat TEXT NOT NULL,
-    topping TEXT NOT NULL,
+    veggie TEXT NOT NULL,
     comments TEXT NOT NULL,
     rating star_rating,
     user_id INTEGER REFERENCES users

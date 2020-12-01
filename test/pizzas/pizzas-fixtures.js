@@ -9,7 +9,7 @@ function makePizzaArray() {
             sauce: 'Buffalo',
             cheese: 'Mozzarella',
             meat: 'Chicken',
-            topping: 'None',
+            veggie: 'None',
             comments: 'Sounds good',
             user_id: 1
         }),
@@ -20,7 +20,7 @@ function makePizzaArray() {
             sauce: 'Barbecue',
             cheese: 'Mozzarella',
             meat: 'Chicken',
-            topping: 'Onion',
+            veggie: 'Onion',
             comments: '',
             user_id: 2
         }),
@@ -31,7 +31,7 @@ function makePizzaArray() {
             sauce: 'Pesto',
             cheese: 'Ricotta',
             meat: 'None',
-            topping: 'Artichoke',
+            veggie: 'Artichoke',
             comments: 'Don\'t want to try',
             user_id: 3
         })
@@ -46,7 +46,7 @@ function makeMaliciousPizza() {
         sauce: 'Alfredo',
         cheese: 'Feta',
         meat: 'Bacon',
-        topping: 'Spinach',
+        veggie: 'Spinach',
         comments: 'Sounds good',
         user_id: 1
     });
